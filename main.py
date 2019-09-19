@@ -14,7 +14,7 @@ def render(room,moves,points):
     ''' Displays the current room, moves, and points '''
 
     print('\n\nMoves: {moves}, Points: {points}'.format(moves=moves, points=points))
-    print('\n\nYou are in the {name}'.format(name=room['name']))
+    print('\n\nYou are {name}'.format(name=room['name']))
     print(room['desc'])
     if len(room['inventory']):
         print('You see the following items:')
@@ -76,7 +76,7 @@ def main():
 
     # Game name, game file, starting location, winning location(s), losing location(s)
     games = [
-        (   'My Game',          'game.json',    'START',    ['END'],    [])
+        (   'Babysitter',          'game.json',    'HOUSE PARTY',    ['END'],    [])
         ,(  'Zork I',           'zork.json',    'WHOUS',    ['NIRVA'],  [])
         ,(  'A Nightmare',      'dream.json',    'START',   ['AWAKE'],  ['END'])
     ]

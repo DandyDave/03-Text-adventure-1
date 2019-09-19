@@ -1,51 +1,430 @@
 {
     "verbs": [
-      { "v": "EXITS",   "map": "EXITS" },
-      { "v": "QUIT",    "map": "QUIT"  },
-      { "v": "NORTH",   "map": "NORTH" },
-      { "v": "N",       "map": "NORTH" },
-      { "v": "SOUTH",   "map": "SOUTH" },
-      { "v": "S",       "map": "SOUTH" },
-      { "v": "EAST",    "map": "EAST"  },
-      { "v": "E",       "map": "EAST"  },
-      { "v": "WEST",    "map": "WEST"  },
-      { "v": "W",       "map": "WEST"  }
+      { "v": "EXITS",         "map": "EXITS" },
+      { "v": "QUIT",          "map": "QUIT"  },
+      { "v": "DINING ROOM",   "map": "DINING ROOM" },
+      { "v": "DINING",        "map": "DINING ROOM" },
+      { "v": "BEDROOM",       "map": "BEDROOM" },
+      { "v": "BED",           "map": "BEDROOM" },
+      { "v": "KITCHEN",       "map": "KITCHEN" },
+      { "v": "FOOD",          "map": "KITCHEN" },
+      { "v": "SOUTH",         "map": "BATHROOM" },
+      { "v": "BATHROOM",      "map": "BATHROOM" },
+      { "v": "RESTROOM",      "map": "BATHROOM" },
+      { "v": "UPSTAIRS",      "map": "UPSTAIRS"  },
+      { "v": "STAIRS",        "map": "UPSTAIRS"  },
+      { "v": "UP",            "map": "UPSTAIRS"  },
+      { "v": "LIVING ROOM",   "map": "LIVING ROOM"  },
+      { "v": "LIVING",        "map": "LIVING ROOM"  },
+      { "v": "PORCH",         "map": "PORCH"  },
+      { "v": "OUTSIDE",       "map": "PORCH"  },
+      { "v": "BALCONY",       "map": "BALCONY"  },
+      { "v": "OUT",           "map": "BALCONY"  },
+      { "v": "TALK",          "map": "TALK"  },
+      { "v": "ASK",           "map": "TALK"  },
+      { "v": "TALK",          "map": "TALK"  },
+      { "v": "SEARCH",        "map": "SEARCH"  },
+      { "v": "HELP",          "map": "SEARCH"  },
+      { "v": "NEXT",          "map": "NEXT"  },
+      { "v": "Y",             "map": "NEXT"  },
+      { "v": "DRAG",          "map": "DRAG"  },
+      { "v": "PULL",          "map": "DRAG"  }
     ],
 
     "rooms": {
-      "START": {
-        "name": "Starting place",
-        "desc": "This is the place to start!",
+      "HOUSE PARTY": {
+        "name": "at a house party!",
+        "desc": "Your own house party to be exact. All your favoutite people having a great time and while you would like nothing else but to let loose and join in you have other things on your mind. Your roomate Bill has some serious self control issues and you need to find to make sure hes alright. Enter Y to begin",
         "exits": [
           {
-            "verb": "NORTH",
-            "target": "LOC2",
-            "condition": ""
-          },
-          {
-            "verb": "SOUTH",
-            "target": "LOC2",
-            "condition": ""
-          },
-          {
-            "verb": "WEST",
-            "target": "LOC2",
-            "condition": ""
-          },
-          {
-            "verb": "EAST",
-            "target": "LOC2",
+            "verb": "NEXT",
+            "target": "KITCHEN",
             "condition": ""
           }
         ],
         "inventory": []
       },
-      "LOC2": {
-        "name": "Location 2",
-        "desc": "Here is the second location.",
-        "exits": [
-        ],
-        "inventory": []
+        "KITCHEN": {
+          "name": "in the Kitchen.",
+          "desc": "The music is faint. Empty bags of chips are strewn all over the counter. A group of people are cracking up over something tha happened at the party. You can still catch glimpses of people dancing in the living room and the shouts over flip cup get loader from the dining room.",
+          "exits": [
+            {
+              "verb": "DINING ROOM",
+              "target": "DR",
+              "condition": ""
+            },
+            {
+              "verb": "LIVING ROOM",
+              "target": "LR",
+              "condition": ""
+            },
+            {
+              "verb": "TALK",
+              "target": "TK",
+              "condition": ""
+            },
+            {
+              "verb": "SEARCH",
+              "target": "SK",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "SK": {
+          "name": "searching the Kitchen.",
+          "desc": "Nothing all too interesting. Just piles of half filled solo cups that you will have to clean up later and a half melted ice pack.",
+          "exits": [
+            {
+              "verb": "DINING ROOM",
+              "target": "DR",
+              "condition": ""
+            },
+            {
+              "verb": "LIVING ROOM",
+              "target": "LR",
+              "condition": ""
+            },
+            {
+              "verb": "TALK",
+              "target": "TK",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "TK": {
+          "name": "talking to the people in the kitchen",
+          "desc": "One of the girls says how they were laughing about a kid who was so wasted that he was trying to eat an icepack he was given for his knee.",
+          "exits": [
+            {
+              "verb": "DINING ROOM",
+              "target": "DR",
+              "condition": ""
+            },
+            {
+              "verb": "LIVING ROOM",
+              "target": "LR",
+              "condition": ""
+            },
+            {
+              "verb": "SEARCH",
+              "target": "SK",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "DR": {
+          "name": "in the Dining Room.",
+          "desc": "The game of flip cup was more intense than you expected with the room resembling the student section of a ccollege football game. Everyone cheering for thier side to win. You catch a glimpse of people in the living room slouching on ccouches watching poeple dance as you lean on the door to Bill's room.",
+          "exits": [
+            {
+              "verb": "BEDROOM",
+              "target": "BR",
+              "condition": ""
+            },
+            {
+              "verb": "LIVING ROOM",
+              "target": "LR",
+              "condition": ""
+            },
+            {
+              "verb": "TALK",
+              "target": "TDR",
+              "condition": ""
+            },
+            {
+              "verb": "SEARCH",
+              "target": "SDR",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "SDR": {
+          "name": "searching the Dining Room",
+          "desc": "Its hard to look around as everyone is yelling and cheering but you catch some unusual things. There are oddly shoe smudges and crushed cups ontop of the table and Ray Ray, Bill's old RA, looks a bit distraught on the couch in the corner.",
+          "exits": [
+            {
+              "verb": "BEDROOM",
+              "target": "BR",
+              "condition": ""
+            },
+            {
+              "verb": "LIVING ROOM",
+              "target": "LR",
+              "condition": ""
+            },
+            {
+              "verb": "TALK",
+              "target": "TDR",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "TDR": {
+          "name": "are talking to Ray Ray, Bill's old RA.",
+          "desc": "Ray Ray is concerned about Bill. She keeps telling him to drink water but he refuses to listen. Whenever she approaches him he tries to hide whatever drink he has behind his back. Last she saw him he was dancing in the Living Room.",
+          "exits": [
+            {
+              "verb": "BEDROOM",
+              "target": "BR",
+              "condition": ""
+            },
+            {
+              "verb": "LIVING ROOM",
+              "target": "LR",
+              "condition": ""
+            },
+            {
+              "verb": "TALK",
+              "target": "TDR",
+              "condition": ""
+            },
+            {
+              "verb": "SEARCH",
+              "target": "SDR",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "BR": {
+          "name": "in Bill's Bedroom.",
+          "desc": "The room was already small but since it is hiding half the valuables in the house it looks like it's straight out an episode of hoarders.",
+          "exits": [
+            {
+              "verb": "DINING ROOM",
+              "target": "DR",
+              "condition": ""
+            },
+            {
+              "verb": "SEARCH",
+              "target": "SBR",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "SBR": {
+          "name": "searching Bill's room.",
+          "desc": "The walls are lined with action figures and super hero posters. Looking throuhg the pile all you can find a set of car keys. Bill doesn't have a car.",
+          "exits": [
+            {
+              "verb": "DINING ROOM",
+              "target": "DR",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "LR": {
+          "name": "in the Living Room",
+          "desc": "People are either dancing thier hearts out or rishing up the stairs for a chance to get in line to relieve themselves. The front door is constantly open as poeple go out for air.",
+          "exits": [
+            {
+              "verb": "UPSTAIRS",
+              "target": "UP",
+              "condition": ""
+            },
+            {
+              "verb": "PORCH",
+              "target": "P",
+              "condition": ""
+            },
+            {
+              "verb": "TALK",
+              "target": "TLR",
+              "condition": ""
+            },
+            {
+              "verb": "SEARCH",
+              "target": "SLR",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "SLR": {
+          "name": "searcching the living room.",
+          "desc": "There is a puddle of beer at the base of the stairs. Someone must have lost thier footing. The coffee table is also covered in food bags from Rally's.",
+          "exits": [
+            {
+              "verb": "UPSTAIRS",
+              "target": "UP",
+              "condition": ""
+            },
+            {
+              "verb": "PORCH",
+              "target": "P",
+              "condition": ""
+            },
+            {
+              "verb": "TALK",
+              "target": "TLR",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "TLR": {
+          "name": "talking to Gary an old friend who is helping DJ the party.",
+          "desc": "He says that next time he isn't doing this job as he longingly looks at the dance floor. He retells how he had to help Bill up after his daring dive from the stairs, well the third step of the stairs. He chuckles as he recalls how everyone cheered for Ben calling him the life of the party.",
+          "exits": [
+            {
+              "verb": "UPSTAIRS",
+              "target": "UP",
+              "condition": ""
+            },
+            {
+              "verb": "PORCH",
+              "target": "P",
+              "condition": ""
+            },
+            {
+              "verb": "SEARCH",
+              "target": "SLR",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "P": {
+          "name": "on the Porch",
+          "desc": "All of the stoner's are hanging out in the cold air joined by one of your other roomates, Wil,  who is paranoid that cops were going to bust the party at any moment.",
+          "exits": [
+            {
+              "verb": "LIVING ROOM",
+              "target": "LR",
+              "condition": ""
+            },
+            {
+              "verb": "TALK",
+              "target": "TP",
+              "condition": ""
+            },
+            {
+              "verb": "SEARCH",
+              "target": "SP",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "SP": {
+          "name": "searching the Porch.",
+          "desc": "All you see are dudes not patient enough to wait for the bathroom relieving themselves behind the house and enough drug paraphernalia to make Pablo Esccobar blush.",
+          "exits": [
+            {
+              "verb": "LIVING ROOM",
+              "target": "LR",
+              "condition": ""
+            },
+            {
+              "verb": "TALK",
+              "target": "TP",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "TP": {
+          "name": "tallking to Wil on the Porch.",
+          "desc": "He recounts how he saw Bill trying to chase down a car on thier way to Rally's trying to sate his gargantuan drunk hunger.",
+          "exits": [
+            {
+              "verb": "LIVING ROOM",
+              "target": "LR",
+              "condition": ""
+            },
+            {
+              "verb": "SEARCH",
+              "target": "SP",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "UP": {
+          "name": "Upstairs.",
+          "desc": "The line for the batchroom is almost stretching to the bottom of the stairs. All of the your other roomates doors are closed. Locked for the party.",
+          "exits": [
+            {
+              "verb": "LIVING ROOM",
+              "target": "LR",
+              "condition": ""
+            },
+            {
+              "verb": "BATHROOM",
+              "target": "RR",
+              "condition": ""
+            },
+            {
+              "verb": "TALK",
+              "target": "TUP",
+              "condition": ""
+            },
+            {
+              "verb": "SEARCH",
+              "target": "SUP",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "SUP": {
+          "name": "searching Upstairs.",
+          "desc": "All of the people are complaining that whoever is in the bathroom is taking forever.",
+          "exits": [
+            {
+              "verb": "LIVING ROOM",
+              "target": "LR",
+              "condition": ""
+            },
+            {
+              "verb": "BATHROOM",
+              "target": "RR",
+              "condition": ""
+            },
+            {
+              "verb": "TALK",
+              "target": "TUP",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "TUP": {
+          "name": "talking to Sam who is half passed out on the floor. Cradling a garbage ccan half full of puke.",
+          "desc": "He's apologizes saying that he tried to make it to the bbathroom bbut hes been waiting for over half an hour for Bill to get out.",
+          "exits": [
+            {
+              "verb": "LIVING ROOM",
+              "target": "LR",
+              "condition": ""
+            },
+            {
+              "verb": "BATHROOM",
+              "target": "RR",
+              "condition": ""
+            },
+            {
+              "verb": "SEARCH",
+              "target": "SUP",
+              "condition": ""
+            }
+          ],
+          "inventory": []
+        },
+        "RR": {
+          "name": "in the Bathroom",
+          "desc": "You grab the legs of Bill as he tries to climb onto the roof. Practically having to carry him you manage to get him back to his room wondering if he will remember any of his antics in the morning. Spoiler: He doesn't",
+          "exits": [
+          ],
+          "inventory": []
+        }
       }
     }
-  }
+  
